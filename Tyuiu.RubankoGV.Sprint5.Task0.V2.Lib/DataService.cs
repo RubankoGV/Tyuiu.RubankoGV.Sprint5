@@ -8,7 +8,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task0.V2.Lib
             string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask0.txt" });
 
             double y = Math.Pow(Math.Exp(1), x) / x;
-            Math.Round(y, 3);
+            y = Math.Round(y, 3);
             File.WriteAllText(path, Convert.ToString(y));
             return path;
         }
