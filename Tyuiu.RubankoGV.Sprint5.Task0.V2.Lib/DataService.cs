@@ -5,7 +5,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task0.V2.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask0.txt";
+            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask0.txt" });
 
             double y = Math.Pow(Math.Exp(1), x) / x;
             Math.Round(y, 3);
