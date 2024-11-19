@@ -28,7 +28,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task1.V19.Lib
                 }
                 if (x == (- (1 / 6)))
                 {
-                    stry = "";
+                    stry = "0";
                 }
                  else
                 {
