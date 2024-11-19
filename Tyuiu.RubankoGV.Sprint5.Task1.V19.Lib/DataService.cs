@@ -26,10 +26,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task1.V19.Lib
                 {
                     File.AppendAllText(path, stry + Environment.NewLine);
                 }
-                if (x == (- (1 / 6)))
-                {
-                    stry = "0";
-                }
+                
                  else
                 {
                     File.AppendAllText(path, stry);
