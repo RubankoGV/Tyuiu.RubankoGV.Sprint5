@@ -20,21 +20,19 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                 string? line = "";
                 while ((line = reader.ReadLine()) != null)
                 {
-                    strLine = Regex.Replace(line, @"\b[0-9]\b", String.Empty);
+                    for (int i = 0; i < line.Length; i++)
+                    {
+                        if ((line[i] != '0') && (line[i] != '1') && (line[i] != '2') && (line[i] != '3') && (line[i] != '4') && (line[i] != '5') && (line[i] != '6') && (line[i] != '7') && (line[i] != '8') && (line[i] != '9'))
+                        {
+                            strLine = strLine + line[i];
+                        }
+                    }
+
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = "";
                 }
             }
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string? line = "";
-                while ((line = reader.ReadLine()) != null)
-                {
-                    strLine = Regex.Replace(line, @"  ", " ");
-                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "";
-                }
-            }
+
             return pathSaveFile;
         }
     }
