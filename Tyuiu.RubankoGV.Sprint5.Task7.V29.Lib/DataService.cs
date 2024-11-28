@@ -17,22 +17,17 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
             string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
-                string? line = "";
-                while ((line = reader.ReadLine()) != null)
+                static string RemoveSingleDigitNumbers(string input)
                 {
-                    for (int i = 0; i < line.Length; i++)
-                    {
-                        if ((line[i] != '0') && (line[i] != '1') && (line[i] != '2') && (line[i] != '3') && (line[i] != '4') && (line[i] != '5') && (line[i] != '6') && (line[i] != '7') && (line[i] != '8') && (line[i] != '9'))
-                        {
-                            strLine = strLine + line[i];
-                        }
-                    }
+                    
+                    string pattern = @"\b\d\b";
+                    Regex regex = new Regex(pattern);
 
-                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "";
+                 
+                    string result = regex.Replace(input, string.Empty);
+
+                    return pathSaveFile;
                 }
-            }
-
             return pathSaveFile;
         }
     }
