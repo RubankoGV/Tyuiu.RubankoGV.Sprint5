@@ -7,23 +7,12 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29
         static void Main(string[] args)
         {
             DataService ds = new DataService();
-
             
-            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
-            Console.WriteLine("***************************************************************************");
-
-
-            string path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask7V29.txt");
-            Console.WriteLine($"Данные находятся в файле: {path}");
-
-            Console.WriteLine();
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
-
-            Console.WriteLine("Находится в файле:");
-            Console.WriteLine(ds.LoadDataAndSave(path));
-            Console.ReadKey();
+            Console.WriteLine("* Исходные данные: C:\\DataSprint5\\InPutDataFileTask7V29.txt             *");
+            string path = @"C:\DataSprint5\InPutDataFileTask7V29.txt";
+            Console.WriteLine("* Результат:                                                              *");
+            string res = ds.LoadDataAndSave(path);
+            Console.WriteLine(res);
         }
     }
 }

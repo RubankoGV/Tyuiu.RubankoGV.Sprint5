@@ -4,36 +4,33 @@ using tyuiu.cources.programming.interfaces.Sprint5;
 namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
 {
     public class DataService : ISprint5Task7V29
+
     {
         public string LoadDataAndSave(string path)
         {
-            string pathSaveFile = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V29.txt");
-            FileInfo fileInfo = new FileInfo(pathSaveFile);
-            bool FileExsits = fileInfo.Exists;
-            if (FileExsits)
-            {
-                File.Delete(pathSaveFile);
-            }
-            string strLine = "";
-
+            string s = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask7.txt" });
+            File.Delete(s);
             using (StreamReader reader = new StreamReader(path))
             {
-                string? line = "";
+
+                string line;
+                string str = "0123456789";
                 while ((line = reader.ReadLine()) != null)
                 {
-                    strLine = Regex.Replace(line, @"\b[0-9]\b", String.Empty);
-                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "";
-                }
-                for (int i = 0; i < strLine.Length; i++)
-                {
-                    if ((line[i] == ' ') && (line[i + 1] == ' '))
+                    string[] l = line.Split(" ");
+                    for (int i = 0; i < l.Length; i++)
                     {
-                        strLine = "";
+                        if (l[i].Length == 1 & str.Contains(l[i]))
+                        {
+                            l[i] = "";
+                        }
                     }
+                    string line1 = string.Join(" ", l);
+                    line1 = line1.Replace("  ", " ");
+                    File.AppendAllText(s, line1);
                 }
             }
-            return pathSaveFile;
+            return s;
         }
     }
 }
