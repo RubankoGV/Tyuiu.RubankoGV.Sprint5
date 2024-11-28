@@ -25,6 +25,16 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                     strLine = "";
                 }
             }
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string? line = "";
+                while ((line = reader.ReadLine()) != null)
+                {
+                    strLine = Regex.Replace(line, @"  ", "");
+                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+                    strLine = "";
+                }
+            }
             return pathSaveFile;
         }
     }
