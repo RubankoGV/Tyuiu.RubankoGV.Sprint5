@@ -30,7 +30,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                 string? line = "";
                 while ((line = reader.ReadLine()) != null)
                 {
-                    strLine = Regex.Replace(line, @"  ", "");
+                    strLine = Regex.Replace(line, @"  ", " ");
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = "";
                 }
