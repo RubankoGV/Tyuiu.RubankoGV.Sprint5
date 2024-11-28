@@ -29,7 +29,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                 {
                     if ((line[i] == ' ') && (line[i + 1] == ' '))
                     {
-                        strLine += ' ';
+                        strLine = "";
                     }
                 }
             }
