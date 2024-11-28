@@ -20,7 +20,7 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                 string? line = "";
                 while ((line = reader.ReadLine()) != null)
                 {
-                    strLine = Regex.Replace(line, @"\b[0-9]\b", " ");
+                    strLine = Regex.Replace(line, @"\b[0-9]\b", "");
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = "";
                 }
