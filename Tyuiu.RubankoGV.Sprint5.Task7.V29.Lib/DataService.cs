@@ -25,8 +25,16 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = "";
                 }
+                for (int i = 0; i < strLine.Length; i++)
+                {
+                    if ((line[i] == ' ') && (line[i + 1] == ' '))
+                    {
+                        strLine += ' ';
+                    }
+                }
             }
             return pathSaveFile;
         }
     }
 }
+
