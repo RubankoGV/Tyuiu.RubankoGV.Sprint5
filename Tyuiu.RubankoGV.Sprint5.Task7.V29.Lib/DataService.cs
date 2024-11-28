@@ -15,12 +15,13 @@ namespace Tyuiu.RubankoGV.Sprint5.Task7.V29.Lib
                 File.Delete(pathSaveFile);
             }
             string strLine = "";
+
             using (StreamReader reader = new StreamReader(path))
             {
                 string? line = "";
                 while ((line = reader.ReadLine()) != null)
                 {
-                    strLine = Regex.Replace(line, @"b\[0-9]\b", String.Empty);
+                    strLine = Regex.Replace(line, @"\b[0-9]\b", String.Empty);
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = "";
                 }
